@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+	<title>Library Travelogue</title>
+
+	<!-- 1:1 on Mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		@font-face { /* wght: 402–898   opsz: 5–990 */
+        	font-family: 'PlayfairVF';
+        	src: url('fonts/PlayfairGX.ttf') format('truetype');
+    	}
+
+    	@font-face {
+        	font-family: 'LibreClarendonVF';
+        	src: url('fonts/LibreClarendonGX.ttf') format('truetype');
+    	}
+
+    	@font-face { /* wght: 22–188   wdth: 300–500 */
+        	font-family: 'BarlowVF';
+        	src: url('fonts/BarlowGX.ttf') format('truetype');
+    	}
+
+    	@font-face {
+        	font-family: 'CatamaranVF';
+        	src: url('fonts/CatamaranGX.ttf') format('truetype');
+    	}
+
+		* {
+			margin: 0px;
+		}
+
+		body {
+			background-color: #FBF9F3;
+			width: 100%;
+			overflow: hidden;
+			font-size: 1vw;
+		}
+
+		.wrapper {
+			display: grid;
+			width: 80em;
+			height: 55em;
+			margin-top: calc(50vh);
+			margin-left: 50vw;
+			transform: translate(-50%, -50%);
+			padding: 4em;
+			z-index: -1;
+
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: 6em;
+    		grid-template-rows: 1fr;
+
+			text-align: center;
+			color: rgba(0, 0, 0, 0.7);
+			font-family: sans-serif;
+		}
+
+		.line {
+			box-sizing: border-box;
+			/* background-color: #DDD;
+			border: 1px solid #000; */
+		}
+
+		/*———————————————————————————————————————— Supporting Text ————————————————————————————————————————*/
+		h5 {
+			font-family: "LibreClarendonVF", serif;
+			font-variation-settings: 'wght' 00, 'wdth' 230;
+			text-align: left;
+			vertical-align: center;
+			width: 100%;
+			color: rgba(0, 0, 0, 0.7);
+			font-size: 1.5em;
+			letter-spacing: .05em;
+			padding-bottom: .5em;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+		}
+
+		.sans h5 {
+			text-align: right;
+		}
+
+		h6 {
+			font-family: "LibreClarendonVF", serif;
+			font-variation-settings: 'wght' 00, 'wdth' 230;
+			text-align: left;
+			vertical-align: center;
+			color: rgba(0, 0, 0, 0.7);
+			height: 0px;
+			font-size: .9em;
+			letter-spacing: .05em;
+		}
+
+		h6:nth-child(2) {
+			text-align: right;
+			margin-bottom: 1.1em;
+		}
+
+		p {
+			width: 100%;
+			hyphens: auto;
+		}
+
+
+		/*———————————————————————————————————————— Serif (Left Column) ————————————————————————————————————————*/
+		.serif {
+			grid-column: 1 / 2;
+			width: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			font-family: "PlayfairVF", serif;
+			line-height: .53;
+			text-align: center;
+			font-variation-settings: 'wght' 898, 'opsz' 500;
+			font-feature-settings: 'lnum';
+		}
+
+		.serif .line p {
+			padding-bottom: .03em; 
+		}
+
+		.serif .line p {
+			letter-spacing: -.02em;
+		}
+
+		.serif .line:nth-child(2) p {
+			font-size: 28.7em;
+		}
+
+		.serif .line:nth-child(3) p {
+			font-size: 10.7em;
+		}
+
+		.serif .line:nth-child(4) p {
+			font-size: 8.5em;
+		}
+
+		.serif .line:nth-child(5) p {
+			font-size: 6.7em;
+		}
+
+		.serif .line:nth-child(6) p {
+			font-size: 4.5em;
+		}
+
+		.serif .line:nth-child(7) p {
+			font-size: 2.44em;
+		}
+
+		/*———————————————————————————————————————— Sans (Right Column) ————————————————————————————————————————*/
+		.sans {
+			grid-column: 2 / 3;
+			width: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			font-family: "BarlowVF", sans-serif;
+			line-height: .6;
+			text-align: center;
+			font-variation-settings: 'wght' 188, 'wdth' 300;
+		}
+
+		.sans .line p {
+			padding-bottom: .1em;
+			letter-spacing: -.01em;
+		}
+
+		.sans .line:nth-child(2) p {
+			font-size: 22.4em;
+		}
+
+		.sans .line:nth-child(3) p {
+			font-size: 13.1em;
+			font-variation-settings: 'wght' 188, 'wdth' 364;
+		}
+
+		.sans .line:nth-child(4) p {
+			font-size: 7.5em;
+		}
+
+		.sans .line:nth-child(5) p {
+			font-size: 4.4em;
+		}
+
+		.sans .line:nth-child(6) p {
+			font-size: 2.87em;
+		}
+
+		.sans .line:nth-child(7) p {
+			font-size: 2.00em;
+		}
+
+		/*———————————————————————————————————————— Corner Icons ————————————————————————————————————————*/
+		.marker {
+			position: absolute;
+			width: 2em;
+			height: 2em;
+		}
+
+		.marker:nth-child(1) {
+			top: .6em;
+			left: .3em;
+		}
+
+		.marker:nth-child(2) {
+			top: .6em;
+			right: .6em;
+		}
+
+		.marker:nth-child(3) {
+			bottom: .6em;
+			left: .6em;
+		}
+
+		.marker:nth-child(4) {
+			bottom: .6em;
+			right: .6em;
+		}
+
+		/*———————————————————————————————————————— Top Bar ————————————————————————————————————————*/
+		.banner {
+			position: absolute;
+			top: -20px;
+			width: 100%;
+			height: 34px;
+			background-color: #FD9E9B;
+			z-index: 100;
+		}
+
+		.logo {
+			background-color: #FD9E9B;
+			position: absolute;
+			top: 0px;
+			left: 50vw;
+			width: 70px;
+			transform: translateX(-50%);
+			box-sizing: border-box;
+			padding: 4px 12px;
+			border-radius: 4px;
+			z-index: 100;
+		}
+		/*———————————————————————————————————————— Media Queries ————————————————————————————————————————*/
+		@media (max-width: 600px) {
+			body {
+				overflow-y: scroll;
+			}
+
+			.wrapper {
+				width: 96em;
+				height: 300em;
+				margin: 38px auto 40px auto;
+				transform: translateY(0%);
+				box-sizing: border-box;
+				padding: 2em;
+
+				grid-template-columns: 1fr;
+				grid-row-gap: 14em;
+	    		grid-template-rows: 1fr 1fr;
+
+				text-align: center;
+				color: rgba(0, 0, 0, 0.7);
+				font-family: sans-serif;
+			}
+
+			.serif {
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+				font-size: 2.48em;
+			}
+
+			.sans {
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+				font-size: 2.48em;
+			}
+
+			.banner, .logo {
+				position: fixed;
+			}
+
+			.marker {
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="banner"></div>
+	<a href="https://www.tdc.org/"><div class="logo">
+		<img src="images/tdc-logo.svg" width="100%" height="auto">
+	</div></a>
+
+	<div class="wrapper">
+		<div class="marker">
+			<img src="images/print-mark.svg" width="100%">
+		</div>
+		<div class="marker">
+			<img src="images/print-mark.svg" width="100%">
+		</div>
+		<div class="marker">
+			<img src="images/print-mark.svg" width="100%">
+		</div>
+		<div class="marker">
+			<img src="images/print-mark.svg" width="100%">
+		</div>
+
+		<div class="serif">
+			<div class="line"><h5>Specimens of types from around the world</h5></div>
+			<div class="line"><h6>205 POINT</h6><h6>4A 5d $17 00</h6><p>3<wbr>27</p></div>
+			<div class="line"><h6>78 POINT</h6><h6>4A 4d $10 20</h6><p>LIBRARY</p></div>
+			<div class="line"><h6>63 POINT</h6><h6>4A 3c $9 10</h6><p>W 36TH ST</p></div>
+			<div class="line"><h6>50 POINT</h6><h6>4A 2b $7 92</h6><p>TRAVELOGUE</p></div>
+			<div class="line"><h6>33 POINT</h6><h6>4A 2a $6 35</h6><p>NEW YORK, NY 10018</p></div>
+			<div class="line"><h6>19 POINT</h6><h6>4A 1a $3 19</h6><p>JANUARY 25TH 2018 6:30 PM &ndash; 8:30 PM</p></div>
+		</div>
+		<div class="sans">
+			<div class="line"><h5> From the collection of Tobias Frere-Jones</h5></div>
+			<div class="line"><h6>208 POINT</h6><h6>2B 5d $16 56</h6><p>5.<wbr>00</p></div>
+			<div class="line"><h6>105 POINT</h6><h6>2B 4d $11 62</h6><p>TOBIAS</p></div>
+			<div class="line"><h6>70 POINT</h6><h6>2B 3c $9 37</h6><p>FRERE-JONES</p></div>
+			<div class="line"><h6>41 POINT</h6><h6>2B 2c $7 14</h6><p>FOR ALL TDC-MEMBERS</p></div>
+			<div class="line"><h6>28 POINT</h6><h6>2B 2b $5 28</h6><p>TALKS ABOUT HIS TYPE SPECIMENS</p></div>
+			<div class="line"><h6>18 POINT</h6><h6>2B 1a $3 40</h6><p>NON-MEMBERS: $25 / STUDENT-NON-MEMBER: $15</p></div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script>
+		var smooth,
+			boundLX,
+			boundRX,
+			boundUY,
+			boundBY,
+			opMin = .08,
+			opAdd = .92;
+
+		// Figure out font-variation-settings for each
+
+
+
+		$(document).ready(function() {
+			smooth = true,
+			boundLX = $('.marker:nth-child(1)').offset().left,
+			boundRX = $('.marker:nth-child(2)').offset().left,
+			boundUY = $('.marker:nth-child(1)').offset().top,
+			boundBY = $('.marker:nth-child(3)').offset().top;
+
+			if(($(window).height() + 300) < $(window).width()) {
+					$('body').css({"font-size":"1.5vh"});
+				}
+				else {
+					$('body').css({"font-size":"1vw"});
+				}
+		});
+
+		$(window).resize(function(){
+				boundLX = $('.marker:nth-child(1)').offset().left,
+				boundRX = $('.marker:nth-child(2)').offset().left,
+				boundUY = $('.marker:nth-child(1)').offset().top,
+				boundBY = $('.marker:nth-child(3)').offset().top;
+
+				if(($(window).height() + 300) < $(window).width()) {
+					$('body').css({"font-size":"1.5vh"});
+				}
+				else {
+					$('body').css({"font-size":"1vw"})
+				}
+		});
+
+
+		$('.wrapper').mousemove(function(move) {
+			var mouseX = move.pageX,
+				mouseY = move.pageY,
+				percentX = (mouseX - boundLX) / boundRX,
+				percentY = (mouseY - boundUY) / boundBY,
+				botL = (1 - percentX) * percentY,
+				botR = percentX * percentY,
+				topL = (1 - percentX) * (1 - percentY),
+				topR = percentX * (1 - percentY);
+
+					/* if(smooth = true) {
+						$('p').css({"transition":"all .4s ease-in-out"});
+						setTimeout(function(){
+							$('p').css({"transition":"none"});
+						}, 400);
+						smooth = false;
+					}   */
+
+					$('.serif .line:nth-child(2) p, .serif .line:nth-child(4) p, .serif .line:nth-child(6) p, .serif .line:nth-child(7) p').css({"font-variation-settings":"'wght' " + (400 + (botL * 500)) + ", 'opsz' " + (1000 + (botL * -500)), "letter-spacing": (.02 + (botL * -.04)) + "em", "opacity": (opMin + (botL * opAdd)) });
+
+					$('.serif .line:nth-child(3) p, .serif .line:nth-child(5) p').css({"font-variation-settings":"'wght' " + (400 + (topL * 500)) + ", 'opsz' " + (1000 + (topL * -500)), "letter-spacing": (.03 + (topL * -.05)) + "em", "opacity": (opMin + (topL * opAdd)) });
+					
+
+					$('.sans .line:nth-child(2) p').css({"font-variation-settings":"'wght' " + (30 + (topR * 160)) + ", 'wdth' 300", "letter-spacing": (.07 + (topR * -.08)) + "em", "opacity": (opMin + (topR * opAdd))});
+					$('.sans .line:nth-child(5) p, .sans .line:nth-child(7) p').css({"font-variation-settings":"'wght' " + (30 + (topR * 160)) + ", 'wdth' 300", "letter-spacing": (.04 + (topR * -.05)) + "em", "opacity": (opMin + (topR * opAdd))});
+					$('.sans .line:nth-child(4) p').css({"font-variation-settings":"'wght' " + (30 + (botR * 160)) + ", 'wdth' 300", "letter-spacing": (.03 + (botR * -.04)) + "em", "opacity": (opMin + (botR * opAdd))});
+					$('.sans .line:nth-child(6) p').css({"font-variation-settings":"'wght' " + (30 + (botR * 160)) + ", 'wdth' 300", "letter-spacing": (.04 + (botR * -.05)) + "em", "opacity": (opMin + (botR * opAdd))});
+					$('.sans .line:nth-child(3) p').css({"font-variation-settings":"'wght' " + (30 + (botR * 160)) + ", 'wdth' 364", "letter-spacing": (.042 + (botR * -.052)) + "em", "opacity": (opMin + (botR * opAdd))});
+				
+		});
+
+		/* $('.wrapper').mouseout(function(){
+		 	if (smooth != true) {
+					$('p').css({"transition":"all 1s ease-in-out"});
+					$('.serif .line:nth-child(2) p, .serif .line:nth-child(3) p, .serif .line:nth-child(4) p, .serif .line:nth-child(5) p, .serif .line:nth-child(6) p, .serif .line:nth-child(7) p').css({"font-variation-settings":"'wght' 900, 'opsz' 500", "letter-spacing":"-.02em", "opacity":"1", "transition":"all 2s ease-in-out" });
+					$('.sans .line:nth-child(2) p, .sans .line:nth-child(4) p, .sans .line:nth-child(5) p, .sans .line:nth-child(6) p, .sans .line:nth-child(7) p').css({"font-variation-settings":"'wght' 190, 'wdth' 300", "letter-spacing":"-.01em", "opacity":"1"});
+					$('.sans .line:nth-child(3) p').css({"font-variation-settings":"'wght' 190, 'wdth' 364", "letter-spacing":"-.01em", "opacity":"1"});
+					setTimeout(function(){
+							$('p').css({"transition":"none"});
+						}, 2000);
+					smooth = true;
+				}
+		}); */
+
+	</script>
+</body>
+</html>
