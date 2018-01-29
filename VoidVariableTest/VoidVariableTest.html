@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Void Perspective test</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var winW;
+    var winH;
+    var st;
+    var sl;
+    var lastSt = 0;
+    var lastSl = 0;
+    var element = 'span';
+    var ready = true;
+    
+
+    
+// Doc Ready wrap and get initial settings  
+    $( document ).ready(function() {
+    console.log( "ready!" );
+        st = $(this).scrollTop();
+        sl = $(this).scrollLeft();
+        
+// wrap each char in a span tag
+            $('h1').html(function(index, html) {
+                return html.replace(/(\w)/g, '<span>$&</span>');
+            });
+
+// Set variation positions
+            $('span').each(function(){
+                var left = ((($(this).offset().left - sl + ($(this).width() / 2)) / $(window).width())*200);
+                var top = ((($(this).offset().top - st + ($(this).height() / 2)) / $(window).height())*200);
+
+                $(this).css({"font-variation-settings":"'wght'" + (100 + top) + ", 'wdth' " + (300 - left)});
+            }); 
+    });
+    
+// Animate perspective basedon window resize 
+    $(window).resize(function(){
+            winW = $(window).width();
+            winH = $(window).height();
+        
+        $('span').each(function(){
+                var left = ((($(this).offset().left - sl + ($(this).width() / 2)) / winW)*200);
+                var top = ((($(this).offset().top - st + ($(this).height() / 2)) / winH)*200);
+                
+                $(this).css({"font-variation-settings":"'wght'" + (100 + top) + ", 'wdth' " + (300 - left)});
+        });
+    });
+    
+// Animate perspective based on scroll
+    $(window).scroll(function(){
+        st = $(this).scrollTop();
+        sl = $(this).scrollLeft();
+    
+        if(st != lastSt || sl != lastSl){
+            $('span').each(function(){
+                var left = ((($(this).offset().left - sl + ($(this).width() / 2)) / $(window).width())*200);
+                var top = ((($(this).offset().top - st + ($(this).height() / 2)) / $(window).height())*200);
+                
+                $(this).css({"font-variation-settings":"'wght'" + (100 + top) + ", 'wdth' " + (300 - left)});
+            });
+            }
+        lastSt = st;
+        lastSl = sl
+     });
+    
+</script>
+
+<style>
+    @font-face {
+        font-family: 'Void Variable';
+        src: url(VoidGX.ttf) format('truetype');
+    }
+    
+    * {
+        margin: 0px;
+    }
+    
+    .container {
+        top: 0px;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 1000px;
+        
+    }
+    
+    h1 {
+        font-family: 'Void Variable';
+        font-size: 200px;
+        font-weight: normal;
+        font-variation-settings:'wght' 200, 'wdth' 200;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>voidvoidvoid</h1>
+    <h1>oidvoidvoidv</h1>
+    <h1>idvoidvoidvo</h1>
+    <h1>dvoidvoidvoi</h1>
+    <h1>voidvoidvoid</h1>
+</div>
+</body>
+</html>
