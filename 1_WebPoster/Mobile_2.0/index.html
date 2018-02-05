@@ -1,0 +1,698 @@
+<!doctype html>
+<html>
+<head>
+	<title>Library Travelogue</title>
+
+	<!-- 1:1 on Mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		@font-face { /* wght: 402–898   opsz: 5–990 */
+        	font-family: 'PlayfairVF';
+        	src: url('fonts/PlayfairGX.ttf') format('truetype');
+    	}
+
+    	@font-face {
+        	font-family: 'LibreClarendonVF';
+        	src: url('fonts/LibreClarendonGX.ttf') format('truetype');
+    	}
+
+    	@font-face { /* wght: 22–188   wdth: 300–500 */
+        	font-family: 'BarlowVF';
+        	src: url('fonts/BarlowGX.ttf') format('truetype');
+    	}
+
+    	@font-face {
+        	font-family: 'CatamaranVF';
+        	src: url('fonts/CatamaranGX.ttf') format('truetype');
+    	}
+
+		* {
+			margin: 0px;
+		}
+
+		body {
+			background-color: #FBF9F3;
+			width: 100%;
+			overflow: hidden;
+			font-size: 1vw;
+		}
+
+		.wrapper {
+			display: grid;
+			position: fixed;
+			width: 80em;
+			height: 55em;
+			margin-top: calc(50vh + 10px);
+			margin-left: 50vw;
+			transform: translate(-50%, -50%);
+			padding: 4em;
+			z-index: -1;
+
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: 6em;
+    		grid-template-rows: 1fr;
+
+			text-align: center;
+			color: rgba(0, 0, 0, 0.7);
+			font-family: sans-serif;
+		}
+
+		.wrapper, p, h5, h6, .line, .serif, .sans {
+			cursor: move;
+		}
+
+		.line {
+			box-sizing: border-box;
+		}
+
+		/*———————————————————————————————————————— Supporting Text ————————————————————————————————————————*/
+		h5 {
+			font-family: "LibreClarendonVF", serif;
+			font-variation-settings: 'wght' 00, 'wdth' 230;
+			text-align: left;
+			vertical-align: center;
+			width: 100%;
+			color: rgba(0, 0, 0, 0.7);
+			font-size: 1.5em;
+			letter-spacing: .05em;
+			padding-bottom: .5em;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+		}
+
+		.sans h5 {
+			text-align: right;
+		}
+
+		h6 {
+			font-family: "LibreClarendonVF", serif;
+			font-variation-settings: 'wght' 00, 'wdth' 230;
+			text-align: left;
+			vertical-align: center;
+			color: rgba(0, 0, 0, 0.7);
+			height: 0px;
+			font-size: .9em;
+			letter-spacing: .05em;
+		}
+
+		h6:nth-child(2) {
+			text-align: right;
+			margin-bottom: 1.1em;
+		}
+
+		p {
+			width: 100%;
+			hyphens: auto;
+		}
+
+		.hoverGuide {
+			position: fixed;
+			top: 0px;
+			left: 50vw;
+			width: 100px;
+			height: 3.5em;
+			transform: translateX(-50%);
+			z-index: 2000;
+		}
+
+		.hoverGuide a {
+			opacity: 0;
+		}
+
+		h3 {
+			position: absolute;
+			width: 100%;
+			font-family: 'BarlowVF';
+			font-variation-settings: 'wght' 60, 'wdth' 300;
+			letter-spacing: .05em;
+			text-transform: uppercase;
+			font-size: 20px;
+			line-height: 26px;
+			text-align: center;
+			color: #FBF9F3;
+			opacity: 1;
+		}
+		/*———————————————————————————————————————— Serif (Left Column) ————————————————————————————————————————*/
+		.serif {
+			grid-column: 1 / 2;
+			width: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			font-family: "PlayfairVF", serif;
+			line-height: .53;
+			text-align: center;
+			font-variation-settings: 'wght' 898, 'opsz' 500;
+			font-feature-settings: 'lnum';
+		}
+
+		.serif .line p {
+			padding-bottom: .03em; 
+		}
+
+		.serif .line p {
+			letter-spacing: -.02em;
+		}
+
+		.serif .line:nth-child(2) p {
+			font-size: 28.7em;
+		}
+
+		.serif .line:nth-child(3) p {
+			font-size: 10.7em;
+		}
+
+		.serif .line:nth-child(4) p {
+			font-size: 8.5em;
+		}
+
+		.serif .line:nth-child(5) p {
+			font-size: 6.7em;
+		}
+
+		.serif .line:nth-child(6) p {
+			font-size: 4.5em;
+		}
+
+		.serif .line:nth-child(7) p {
+			font-size: 2.44em;
+		}
+
+		/*———————————————————————————————————————— Sans (Right Column) ————————————————————————————————————————*/
+		.sans {
+			grid-column: 2 / 3;
+			width: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			font-family: "BarlowVF", sans-serif;
+			line-height: .6;
+			text-align: center;
+			font-variation-settings: 'wght' 188, 'wdth' 300;
+		}
+
+		.sans .line p {
+			padding-bottom: .1em;
+			letter-spacing: -.01em;
+		}
+
+		.sans .line:nth-child(2) p {
+			font-size: 22.4em;
+		}
+
+		.sans .line:nth-child(3) p {
+			font-size: 13.1em;
+			font-variation-settings: 'wght' 188, 'wdth' 364;
+		}
+
+		.sans .line:nth-child(4) p {
+			font-size: 7.5em;
+		}
+
+		.sans .line:nth-child(5) p {
+			font-size: 4.4em;
+		}
+
+		.sans .line:nth-child(6) p {
+			font-size: 2.87em;
+		}
+
+		.sans .line:nth-child(7) p {
+			font-size: 2.00em;
+		}
+
+		/*———————————————————————————————————————— Corner Icons ————————————————————————————————————————*/
+		.marker {
+			position: absolute;
+			width: 2em;
+			height: 2em;
+		}
+
+		.marker:nth-child(1) {
+			top: 1.3em;
+			left: 1.3em;
+			font-variation-settings: 'wght' 00, 'wdth' 900 !important;
+		}
+
+		.marker:nth-child(2) {
+			top: 1.3em;
+			right: 1.3em;
+		}
+
+		.marker:nth-child(3) {
+			bottom: 1.3em;
+			left: 1.3em;
+		}
+
+		.marker:nth-child(4) {
+			bottom: -.7em;
+			right: 0em;
+			font-size: 2.6em;
+		}
+
+		.marker:nth-child(4) > h3 ~ h3 {
+			top: .25em;
+		}
+
+		.marker h3 {
+			position: absolute;
+			width: 100%;
+			font-family: 'LibreClarendonVF';
+			font-variation-settings: 'wght' 00, 'wdth' 280;
+			letter-spacing: .05em;
+			text-transform: uppercase;
+			font-size: 1.8em;
+			text-align: center;
+			color: #FD9E9B;
+			opacity: 1;
+		}
+
+		/*———————————————————————————————————————— Top Bar ————————————————————————————————————————*/
+		.banner {
+			position: absolute;
+			top: -20px;
+			width: 100%;
+			height: 50px;
+			background-color: #FD9E9B;
+			z-index: 100;
+		}
+
+		.logo {
+			background-color: #FD9E9B;
+			position: absolute;
+			top: 0px;
+			left: 6vw;
+			width: 70px;
+			height: 30px;
+			box-sizing: border-box;
+			padding: 4px 24px 0 0;
+			z-index: 100;
+			transition: all .2s ease-in-out;
+		}
+
+		a ~ a > .logo {
+			right: 5.8vw;
+			left: auto;
+			padding: 4px 0 0 42px;
+		}
+		/*———————————————————————————————————————— Media Queries ————————————————————————————————————————*/
+
+		.serif-mobile {
+			display: none;
+		}
+
+		@media (max-width: 600px) {
+			body {
+				overflow-y: scroll; 
+			}
+
+			.wrapper {
+				width: 100em;
+				height: calc(177 * 1em);
+				margin: 38px auto 40px auto;
+				margin-left: 50vw;
+				transform: translateX(-50%);
+				box-sizing: border-box;
+				padding: 2em;
+
+				grid-template-columns: 1fr;
+	    		grid-template-rows: 1fr;
+
+				text-align: center;
+				color: rgba(0, 0, 0, 0.7);
+				font-family: sans-serif;
+			}
+
+			.serif {
+				display: none;
+			}
+
+			.sans {
+				display: none;
+			}
+
+			.banner, .logo {
+				position: fixed;
+			}
+
+			.marker {
+				display: none;
+			}
+
+			.serif-mobile {
+				grid-column: 1 / 2;
+				width: 100%;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				font-family: "PlayfairVF", serif;
+				line-height: .53;
+				text-align: center;
+				font-variation-settings: 'wght' 898, 'opsz' 500;
+				font-feature-settings: 'lnum';
+			}
+
+			.serif-mobile .line p {
+			padding-bottom: .03em; 
+			}
+
+			.serif-mobile .line p {
+				letter-spacing: -.02em;
+			}
+
+			.serif-mobile .line:nth-child(2) p {
+				font-size: 31.4em;
+			}
+
+			.serif-mobile .line:nth-child(3) p {
+				font-size: 27.8em;
+			}
+
+			.serif-mobile .line:nth-child(4) p {
+				font-size: 17.5em;
+			}
+
+			.serif-mobile .line:nth-child(5) p {
+				font-size: 17.5em;
+			}
+
+			.serif-mobile .line:nth-child(6) p {
+				font-size: 12.74em;
+			}
+
+			.serif-mobile .line:nth-child(7) p {
+				font-size: 10.5em;
+			}
+
+			.serif-mobile .line:nth-child(8) p {
+				font-size: 9.94em;
+			}
+
+			.serif-mobile .line:nth-child(9) p {
+				font-size: 7.24em;
+			}
+
+			.serif-mobile .line:nth-child(10) p {
+				font-size: 7em;
+			}
+
+			h5 {
+				font-size: 5em;
+			}
+
+
+			h6 {
+				font-family: "LibreClarendonVF", serif;
+				font-variation-settings: 'wght' 00, 'wdth' 230;
+				text-align: left;
+				vertical-align: center;
+				color: rgba(0, 0, 0, 0.7);
+				height: 0px;
+				font-size: 3em;
+				letter-spacing: .05em;
+			}
+
+		h6:nth-child(2) {
+			text-align: right;
+			margin-bottom: 1.1em;
+		}
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="banner"></div>
+	<a href="https://www.tdc.org/">
+		<div class="logo">
+			<img src="images/tdc-logo.svg" width="100%" height="auto">
+		</div>
+	</a>
+	<a href="https://frerejones.com/">
+		<div class="logo">
+			<img src="images/tfj-logo-mobile.svg" width="100%" height="auto">
+		</div>
+	</a>
+
+	<div class="wrapper">
+		<div class="marker">
+			<a href="https://www.tdc.org/event/library-travelogue-tobias-frere-jones/"><h3>¶</h3></a>
+		</div>
+		<div class="marker">
+			<a href="https://www.eventbrite.com/"><h3>$</h3></a>
+		</div>
+		<div class="marker">
+			<a href="https://www.google.com/maps/place/347+W+36th+St+%23603,+New+York,+NY+10018/@40.7544681,-73.9965779,17z/data=!3m1!4b1!4m5!3m4!1s0x89c259ad7ecaaacf:0x41939392d7d8e519!8m2!3d40.7544681!4d-73.9943892?hl=en"><h3>#</h3></a>
+		</div>
+		<div class="marker">
+			<a href="https://frerejones.com/"><h3>“</h3>
+			<h3>”</h3></a>
+		</div>
+
+		<div class="serif">
+			<div class="line"><h5>Specimens of types from around the world</h5></div>
+			<div class="line"><h6>205 POINT</h6><h6>4A 5d $17 00</h6><p>3<wbr>27</p></div>
+			<div class="line"><h6>78 POINT</h6><h6>4A 4d $10 20</h6><p>LIBRARY</p></div>
+			<div class="line"><h6>63 POINT</h6><h6>4A 3c $9 10</h6><p>W 36TH ST</p></div>
+			<div class="line"><h6>50 POINT</h6><h6>4A 2b $7 92</h6><p>TRAVELOGUE</p></div>
+			<div class="line"><h6>33 POINT</h6><h6>4A 2a $6 35</h6><p>NEW YORK, NY 10018</p></div>
+			<div class="line"><h6>19 POINT</h6><h6>4A 1a $3 19</h6><p>JANUARY 25TH 2018 6:30 PM &ndash; 8:30 PM</p></div>
+		</div>
+		<div class="sans">
+			<div class="line"><h5> From the collection of Tobias Frere-Jones</h5></div>
+			<div class="line"><h6>208 POINT</h6><h6>2B 5d $16 56</h6><p>5.<wbr>00</p></div>
+			<div class="line"><h6>105 POINT</h6><h6>2B 4d $11 62</h6><p>TOBIAS</p></div>
+			<div class="line"><h6>70 POINT</h6><h6>2B 3c $9 37</h6><p>FRERE-JONES</p></div>
+			<div class="line"><h6>41 POINT</h6><h6>2B 2c $7 14</h6><p>FOR ALL TDC-MEMBERS</p></div>
+			<div class="line"><h6>28 POINT</h6><h6>2B 2b $5 28</h6><p>TALKS ABOUT HIS TYPE SPECIMENS</p></div>
+			<div class="line"><h6>18 POINT</h6><h6>2B 1a $3 40</h6><p>NON-MEMBERS: $25 / STUDENT-NON-MEMBER: $15</p></div>
+		</div>
+
+		<div class="serif-mobile">
+			<div class="line"><h5>Specimens of types from around the world</h5></div>
+			<div class="line"><h6>205 POINT</h6><h6>4A 5d $17 00</h6><p>TOBIAS</p></div>
+			<div class="line"><h6>78 POINT</h6><h6>4A 4d $10 20</h6><p>LIBRARY</p></div>
+			<div class="line"><h6>63 POINT</h6><h6>4A 3c $9 10</h6><p>FRERE-JONES</p></div>
+			<div class="line"><h6>50 POINT</h6><h6>4A 2b $7 92</h6><p>TRAVELOGUE</p></div>
+			<div class="line"><h6>33 POINT</h6><h6>4A 2a $6 35</h6><p>TDC-MEMBERS: $5</p></div>
+			<div class="line"><h6>33 POINT</h6><h6>4A 2a $6 35</h6><p>AT 347 W 36TH STREET</p></div>
+			<div class="line"><h6>33 POINT</h6><h6>4A 2a $6 35</h6><p>$25 FOR NON-MEMBERS</p></div>
+			<div class="line"><h6>19 POINT</h6><h6>4A 1a $3 19</h6><p>JAN. 25TH 2018 6:30 PM &ndash; 8:30 PM</p></div>
+			<div class="line"><h6>33 POINT</h6><h6>4A 2a $6 35</h6><p>FOR STUDENT NON-MEMBERS: $15</p></div>
+		</div>
+	</div>
+
+	<div class="hoverGuide">
+		<a href="https://www.tdc.org/event/library-travelogue-tobias-frere-jones/"><h3>Event</h3></a>
+		<a href="https://frerejones.com/"><h3>Speaker</h3></a>
+		<a href="https://www.google.com/maps/place/347+W+36th+St+%23603,+New+York,+NY+10018/@40.7544681,-73.9965779,17z/data=!3m1!4b1!4m5!3m4!1s0x89c259ad7ecaaacf:0x41939392d7d8e519!8m2!3d40.7544681!4d-73.9943892?hl=en"><h3>Address</h3></a>
+		<a href="https://www.eventbrite.com/"><h3>Price</h3></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script>
+		var smooth,
+			boundLX,
+			boundRX,
+			boundUY,
+			boundBY,
+			opMin = .08,
+			opAdd = .92,
+			st,
+			scrollInterval; ;
+
+		// Figure out font-variation-settings for each
+
+
+		$(document).ready(function() {
+			smooth = true,
+			boundLX = $('.marker:nth-child(1)').offset().left,
+			boundRX = $('.marker:nth-child(2)').offset().left,
+			boundUY = $('.marker:nth-child(1)').offset().top,
+			boundBY = $('.marker:nth-child(3)').offset().top;
+
+			scrollInterval = $(window).height();
+			
+			if($(window).width() <= 600) {
+					$('body').css({"height": 5 * scrollInterval + "px"});
+
+					if($(window).height() < ((16 / 9) * $(window).width())){
+					$('body').css({"font-size":".565vh"});
+					$('.wrapper').css({"height":"calc(100vh - 50px)"})
+					}
+				}
+
+				if ($(window).width() > 600) {
+					$('.wrapper').css({"height":"55em"})
+					if(($(window).height() + 200) < $(window).width()) {
+						$('body').css({"font-size":"1.4vh"});
+					}	else {
+							$('body').css({"font-size":"1vw"})
+						}
+				}
+		});
+
+		$(window).resize(function(){
+				boundLX = $('.marker:nth-child(1)').offset().left,
+				boundRX = $('.marker:nth-child(2)').offset().left,
+				boundUY = $('.marker:nth-child(1)').offset().top,
+				boundBY = $('.marker:nth-child(3)').offset().top;
+
+				scrollInterval = $(window).height();
+
+				if($(window).width() <= 600) {
+					$('body').css({"height": 5 * scrollInterval + "px"});
+
+					if($(window).height() < ((16 / 9) * $(window).width())){
+					$('body').css({"font-size":".565vh"});
+					$('.wrapper').css({"height":"calc(100vh - 50px)"})
+					}
+				}
+
+				if ($(window).width() > 600) {
+					$('.wrapper').css({"height":"55em"})
+					if(($(window).height() + 200) < $(window).width()) {
+						$('body').css({"font-size":"1.4vh"});
+					}	else {
+							$('body').css({"font-size":"1vw"})
+						}
+				}
+
+		});
+
+
+		$('.wrapper').mousemove(function(move) {
+
+			if($(window).width() > 600) {
+			
+			var mouseX = move.pageX,
+				mouseY = move.pageY,
+				percentX = (mouseX - boundLX) / boundRX,
+				percentY = (mouseY - boundUY) / boundBY,
+				botL = (1 - percentX) * percentY,
+				botR = percentX * percentY,
+				topL = (1 - percentX) * (1 - percentY),
+				topR = percentX * (1 - percentY);
+
+					/* */ if(smooth == true) {
+						$('p').css({"transition":"font-variation-settings .2s ease-in-out, letter-spacing .2s ease-in-out, opacity .2s ease-in-out"});
+						smooth = false;
+					};  
+
+					setTimeout(function(){
+							$('p').css({"transition":"none"});
+						}, 201);
+
+					$('.serif .line:nth-child(2) p, .serif .line:nth-child(4) p, .serif .line:nth-child(6) p, .serif .line:nth-child(7) p').css({"font-variation-settings":"'wght' " + (400 + (botL * 500)) + ", 'opsz' " + (1000 + (botL * -500)), "letter-spacing": (.02 + (botL * -.04)) + "em", "opacity": (opMin + (botL * opAdd)) });
+
+					$('.serif .line:nth-child(3) p, .serif .line:nth-child(5) p').css({"font-variation-settings":"'wght' " + (400 + (topL * 500)) + ", 'opsz' " + (1000 + (topL * -500)), "letter-spacing": (.03 + (topL * -.05)) + "em", "opacity": (opMin + (topL * opAdd)) });
+					
+
+					$('.sans .line:nth-child(2) p').css({"font-variation-settings":"'wght' " + (30 + (topR * 160)) + ", 'wdth' 300", "letter-spacing": (.07 + (topR * -.08)) + "em", "opacity": (opMin + (topR * opAdd))});
+					$('.sans .line:nth-child(5) p, .sans .line:nth-child(7) p').css({"font-variation-settings":"'wght' " + (30 + (topR * 160)) + ", 'wdth' 300", "letter-spacing": (.04 + (topR * -.05)) + "em", "opacity": (opMin + (topR * opAdd))});
+					$('.sans .line:nth-child(4) p').css({"font-variation-settings":"'wght' " + (30 + (botR * 160)) + ", 'wdth' 300", "letter-spacing": (.03 + (botR * -.04)) + "em", "opacity": (opMin + (botR * opAdd))});
+					$('.sans .line:nth-child(6) p').css({"font-variation-settings":"'wght' " + (30 + (botR * 160)) + ", 'wdth' 300", "letter-spacing": (.04 + (botR * -.05)) + "em", "opacity": (opMin + (botR * opAdd))});
+					$('.sans .line:nth-child(3) p').css({"font-variation-settings":"'wght' " + (30 + (botR * 160)) + ", 'wdth' 364", "letter-spacing": (.042 + (botR * -.052)) + "em", "opacity": (opMin + (botR * opAdd))});
+
+					$('.hoverGuide a:nth-child(1)').css({"opacity": (0 + ((topL - .4) * 2.5)) });
+					$('.hoverGuide a:nth-child(2)').css({"opacity": (0 + ((botR - .4) * 2.5)) });
+					$('.hoverGuide a:nth-child(3)').css({"opacity": (0 + ((botL - .4) * 2.5)) });
+					$('.hoverGuide a:nth-child(4)').css({"opacity": (0 + ((topR - .4) * 2.5)) });
+
+					}
+		});
+
+		/* */ $('.wrapper').mouseout(function(){
+			if($(window).width() > 600) {
+
+		 	if (smooth != true) {
+					$('p').css({"transition":"font-variation-settings .2s ease-in-out, letter-spacing .2s ease-in-out, opacity .2s ease-in-out"});
+					$('.serif .line:nth-child(2) p, .serif .line:nth-child(3) p, .serif .line:nth-child(4) p, .serif .line:nth-child(5) p, .serif .line:nth-child(6) p, .serif .line:nth-child(7) p').css({"font-variation-settings":"'wght' 900, 'opsz' 500", "letter-spacing":"-.02em", "opacity":"1"});
+					$('.sans .line:nth-child(2) p, .sans .line:nth-child(4) p, .sans .line:nth-child(5) p, .sans .line:nth-child(6) p, .sans .line:nth-child(7) p').css({"font-variation-settings":"'wght' 190, 'wdth' 300", "letter-spacing":"-.01em", "opacity":"1"});
+					$('.sans .line:nth-child(3) p').css({"font-variation-settings":"'wght' 190, 'wdth' 364", "letter-spacing":"-.01em", "opacity":"1"});
+					smooth = true;
+				}
+
+			}
+		});
+
+var sr;
+
+		$(window).scroll(function(){
+
+			if($(window).width() <= 600) {
+			st = $(this).scrollTop();
+			sOne = (scrollInterval * 1);
+
+				if(st >= 0 && st < (scrollInterval * 1)) {
+					sr = st;
+					percentInt = sr / scrollInterval;
+					// Animate In
+					$('.serif-mobile .line:nth-child(3) p, .serif-mobile .line:nth-child(5) p').css({"font-variation-settings":"'wght' " + (400 + (percentInt * 500)) + ", 'opsz' " + (1000 + (percentInt * -500)), "letter-spacing": (.02 + (percentInt * -.04)) + "em", "opacity": (opMin + (percentInt * opAdd)) });	
+
+					$('.serif-mobile .line:nth-child(2) p, .serif-mobile .line:nth-child(4) p, .serif-mobile .line:nth-child(6) p, .serif-mobile .line:nth-child(7) p, .serif-mobile .line:nth-child(8) p, .serif-mobile .line:nth-child(9) p, .serif-mobile .line:nth-child(10) p').css({"font-variation-settings":"'wght' " + (400) + ", 'opsz' " + (1000), "letter-spacing": (.02) + "em", "opacity": (opMin) });	
+
+					$('.hoverGuide a:nth-child(1)').css({"opacity": (0 + percentInt)});
+					$('.hoverGuide a:nth-child(2)').css({"opacity": 0});
+					$('.hoverGuide a:nth-child(3)').css({"opacity": 0});
+					$('.hoverGuide a:nth-child(4)').css({"opacity": 0});
+					}
+					if(st >= scrollInterval && st < (scrollInterval * 2)) {
+						sr = st	- scrollInterval;
+						percentInt = sr / scrollInterval;
+						// Animate Out
+						$('.serif-mobile .line:nth-child(3) p, .serif-mobile .line:nth-child(5) p').css({"font-variation-settings":"'wght' " + (900 - (percentInt * 500)) + ", 'opsz' " + (500 + (percentInt * 500)), "letter-spacing": (-.02 + (percentInt * .04)) + "em", "opacity": (1 - (percentInt * opAdd)) });	
+						// Animate In
+						$('.serif-mobile .line:nth-child(2) p, .serif-mobile .line:nth-child(4) p').css({"font-variation-settings":"'wght' " + (400 + (percentInt * 500)) + ", 'opsz' " + (1000 + (percentInt * -500)), "letter-spacing": (.02 + (percentInt * -.04)) + "em", "opacity": (opMin + (percentInt * opAdd)) });	
+
+						$('.serif-mobile .line:nth-child(6) p, .serif-mobile .line:nth-child(7) p, .serif-mobile .line:nth-child(8) p, .serif-mobile .line:nth-child(9) p, .serif-mobile .line:nth-child(10) p').css({"font-variation-settings":"'wght' " + (400) + ", 'opsz' " + (1000), "letter-spacing": (.02) + "em", "opacity": (opMin) });
+
+						$('.hoverGuide a:nth-child(2)').css({"opacity": (0 + percentInt)});
+						$('.hoverGuide a:nth-child(1)').css({"opacity": (1 - (percentInt * 2))});
+						$('.hoverGuide a:nth-child(3)').css({"opacity": 0});
+						$('.hoverGuide a:nth-child(4)').css({"opacity": 0});
+					}
+					if(st >= (scrollInterval * 2) && st < (scrollInterval * 3)) {
+						sr = st	- (scrollInterval * 2);
+						percentInt = sr / scrollInterval;
+						// Animate Out
+						$('.serif-mobile .line:nth-child(2) p, .serif-mobile .line:nth-child(4) p').css({"font-variation-settings":"'wght' " + (900 - (percentInt * 500)) + ", 'opsz' " + (500 + (percentInt * 500)), "letter-spacing": (-.02 + (percentInt * .04)) + "em", "opacity": (1 - (percentInt * opAdd)) });	
+						// Animate In
+						$('.serif-mobile .line:nth-child(7) p, .serif-mobile .line:nth-child(9) p').css({"font-variation-settings":"'wght' " + (400 + (percentInt * 500)) + ", 'opsz' " + (1000 + (percentInt * -500)), "letter-spacing": (.02 + (percentInt * -.04)) + "em", "opacity": (opMin + (percentInt * opAdd)) });	
+
+						$('.serif-mobile .line:nth-child(3) p, .serif-mobile .line:nth-child(5) p, .serif-mobile .line:nth-child(6) p, .serif-mobile .line:nth-child(8) p, .serif-mobile .line:nth-child(10) p').css({"font-variation-settings":"'wght' " + (400) + ", 'opsz' " + (1000), "letter-spacing": (.02) + "em", "opacity": (opMin) });
+
+						$('.hoverGuide a:nth-child(3)').css({"opacity": (0 + percentInt)});
+						$('.hoverGuide a:nth-child(2)').css({"opacity": (1 - (percentInt * 2))});
+						$('.hoverGuide a:nth-child(1)').css({"opacity": 0});
+						$('.hoverGuide a:nth-child(4)').css({"opacity": 0});
+					}
+					if(st >= (scrollInterval * 3) && st < (scrollInterval * 4)) {
+						sr = st	- (scrollInterval * 3);
+						percentInt = sr / scrollInterval;
+						// Animate Out
+						$('.serif-mobile .line:nth-child(7) p, .serif-mobile .line:nth-child(9) p').css({"font-variation-settings":"'wght' " + (900 - (percentInt * 500)) + ", 'opsz' " + (500 + (percentInt * 500)), "letter-spacing": (-.02 + (percentInt * .04)) + "em", "opacity": (1 - (percentInt * opAdd)) });	
+						// Animate In
+						$('.serif-mobile .line:nth-child(6) p, .serif-mobile .line:nth-child(8) p, .serif-mobile .line:nth-child(10) p').css({"font-variation-settings":"'wght' " + (400 + (percentInt * 500)) + ", 'opsz' " + (1000 + (percentInt * -500)), "letter-spacing": (.02 + (percentInt * -.04)) + "em", "opacity": (opMin + (percentInt * opAdd)) });	
+
+						$('.serif-mobile .line:nth-child(2) p, .serif-mobile .line:nth-child(3) p, .serif-mobile .line:nth-child(4) p, .serif-mobile .line:nth-child(5) p').css({"font-variation-settings":"'wght' " + (400) + ", 'opsz' " + (1000), "letter-spacing": (.02) + "em", "opacity": (opMin) });
+
+						$('.hoverGuide a:nth-child(4)').css({"opacity": (0 + percentInt)});
+						$('.hoverGuide a:nth-child(3)').css({"opacity": (1 - (percentInt * 2))});
+						$('.hoverGuide a:nth-child(1)').css({"opacity": 0});
+						$('.hoverGuide a:nth-child(2)').css({"opacity": 0});
+					}
+			}		
+		});
+
+	</script>
+</body>
+</html>
