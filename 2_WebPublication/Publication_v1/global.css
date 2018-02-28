@@ -8,6 +8,11 @@ body {
 
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:regularitalic,bold,bolditalic');
 
+@font-face {
+	font-family: "Space Trio";
+  	src: url("fonts/Space-Trio-Book.otf") format("OpenType")
+}
+
 h1 {
 	font-family: 'Space Trio', monospace;
 	font-weight: 800;
