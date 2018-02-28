@@ -1,0 +1,187 @@
+* {
+	margin: 0;
+}
+
+body {
+	background-color: #F7F7F7;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:regularitalic,bold,bolditalic');
+
+h1 {
+	font-family: 'Space Trio', monospace;
+	font-weight: 800;
+	font-size: 34px;
+	line-height: 38px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+
+	font-feature-settings: "ss06";
+
+	color: #282828;
+}
+
+h3 {
+	font-family: 'Space Trio', monospace;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 38px;
+	letter-spacing: 0;
+	font-feature-settings: "ss06";
+
+	color: #282828;
+
+	width: 100%;
+	box-sizing: border-box;
+	/* padding: 4px 12px;
+	border-radius: 4px; */
+	margin-bottom: 10px;
+}
+
+h4 {
+	display: inline-block;
+	font-family: 'Space Mono', monospace;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+
+	color: #282828;
+
+	border-bottom: 2px solid #FF1D5C;
+	margin-bottom: 4px;
+}
+
+h5 {
+	font-family: 'Space Mono', monospace;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0;
+	margin-bottom: 8px;
+
+	color: #282828;
+}
+
+p {
+	font-family: 'Space Trio', monospace;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0.4px;
+	font-feature-settings: "ss01", "ss02", "ss04", "ss05", "ss06", "onum";
+
+	color: #282828;
+	padding-bottom: 28px;
+}
+
+.code {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 25px;
+	white-space: pre-wrap;
+	padding: 24px 14px;
+	margin: 0px 0px 28px 0px;
+
+	background-color: #FFF;
+	border-radius: 4px;
+}
+
+.note {
+	font-style: italic;
+}
+
+p::selection {
+	background: #FF1D5C;
+	color: #FFFFFF;
+	border-radius: 4px;
+}
+
+blockquote {
+	display: block;
+	font-family: 'Space Mono', monospace;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 22px;
+	line-height: 34px;
+	letter-spacing: 0.4px;
+
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	border-radius: 4px;
+	margin-bottom: 28px;
+
+	color: #FF1D5C;
+	background-color: #FFFFFF;
+}
+
+pre {
+	font-family: 'Space Mono', monospace;
+	font-weight: 400;
+	font-size: .737vw;
+	letter-spacing: 0;
+	line-height: .7em;
+
+	margin: 44px 0px;
+
+	color: #282828;
+}
+
+article {
+	width: 90vw;
+	margin-left: 5vw;
+	margin-top: 4vw;
+}
+
+footer {
+	height: 100px;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+.hr {
+	width: 100%;
+	height: 2px;
+	background-color: #282828;
+}
+
+.caption {
+	font-size: 14px;
+	opacity: 0.4;
+}
+
+.redact {
+	display: none;
+}
+
+object {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+@media print {
+	.redact {
+		display: initial;
+	}
+
+	body {
+		font-size:;
+	}
+
+	article {
+  		width: 9in;
+  		font-size: 3.5in;
+  		column-count: 2;
+  		column-gap: 2in;
+  		column-width: 3.5in; 
+	}
+}                                                                                       
+                                                                                                                        
