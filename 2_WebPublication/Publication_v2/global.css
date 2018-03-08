@@ -3,43 +3,43 @@
 
 @font-face {
   font-family: "Space Trio";
-  src: url("/fonts/SpaceTrio-Light.ttf") format("TrueType");
+  src: url("fonts/SpaceTrio-Light.otf") format("opentype");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "Space Trio";
-  src: url("/fonts/SpaceTrio-Book.ttf") format("TrueType");
+  src: url("fonts/SpaceTrio-Book.otf") format("opentype");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Space Trio";
-  src: url("/fonts/SpaceTrio-Regular.ttf") format("TrueType");
+  src: url("fonts/SpaceTrio-Regular.otf") format("opentype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Space Trio";
-  src: url("/fonts/SpaceTrio-SemiBold.ttf") format("TrueType");
+  src: url("fonts/SpaceTrio-SemiBold.otf") format("opentype");
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Space Trio";
-  src: url("/fonts/SpaceTrio-Bold.ttf") format("TrueType");
+  src: url("fonts/SpaceTrio-Bold.otf") format("opentype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Space Trio";
-  src: url("/fonts/SpaceTrio-ExtraBold.ttf") format("TrueType");
+  src: url("fonts/SpaceTrio-ExtraBold.otf") format("opentype");
   font-weight: 800;
 }
 
 @font-face {
   font-family: "OCR A Std";
-  src: url("/fonts/OCRAStd.otf") format("OpenType");
+  src: url("fonts/OCRAStd.otf") format("opentype");
   font-weight: 400;
 }
 
