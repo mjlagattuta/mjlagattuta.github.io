@@ -1,0 +1,508 @@
+/*————————————————————————————  Font Imports  ———————————————————————————— */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Space+Mono:400,400i,700,700i');
+
+@font-face {
+  font-family: "Space Trio";
+  src: url("/fonts/SpaceTrio-Light.ttf") format("TrueType");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Space Trio";
+  src: url("/fonts/SpaceTrio-Book.ttf") format("TrueType");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Space Trio";
+  src: url("/fonts/SpaceTrio-Regular.ttf") format("TrueType");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Space Trio";
+  src: url("/fonts/SpaceTrio-SemiBold.ttf") format("TrueType");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Space Trio";
+  src: url("/fonts/SpaceTrio-Bold.ttf") format("TrueType");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Space Trio";
+  src: url("/fonts/SpaceTrio-ExtraBold.ttf") format("TrueType");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "OCR A Std";
+  src: url("/fonts/OCRAStd.otf") format("OpenType");
+  font-weight: 400;
+}
+
+/*————————————————————————————  Doc Setup  ———————————————————————————— */
+* {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #F7F7F7;
+}
+
+article {
+	position: relative;
+	width: 90vw;
+	margin: 5vw auto;
+}
+
+footer {
+	height: 100px;
+	width: 100%;
+	padding: 20px 0 48px 0;
+	background-color: #FFFFFF;
+}
+
+/*————————————————————————————  Nav Styling  ———————————————————————————— */
+nav {
+	position: fixed;
+	width: 100%;
+	height: 48px;
+	background-color: #612AFF;
+	bottom: 0px;
+	z-index: 20;
+}
+
+nav ul {
+	position: absolute;
+	line-height: 30px;
+	right: 5vw;
+	top: 9px;
+	font-family: 'Space Mono';
+	font-size: 18px;
+	color: #F7F7F7;
+
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 0 6px;
+	border-radius: 4px;
+}
+
+a {
+	color: inherit;
+}
+
+.logo {
+	width: 30px;
+	height: 30px;
+	box-sizing: border-box;
+	padding: 4px;
+	border-radius: 4px;
+	position: absolute;
+	left: 5vw;
+	top: 9px;
+}
+
+/*————————————————————————————  Text Styling  ———————————————————————————— */
+h1 {
+	font-family: 'Space Trio', monospace;
+	font-weight: 800;
+	font-size: 34px;
+	line-height: 38px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+
+	font-feature-settings: "ss06";
+
+	color: #282828;
+}
+
+.title {
+	font-size: 8.75vw;
+	font-weight: 800;
+	white-space: nowrap;
+	line-height: .9em;
+	margin-top: 1.5vw;
+}
+
+.title ~ .title {
+	font-size:11.9vw;
+	letter-spacing: .24vw;
+	font-weight:700;
+	white-space: nowrap;
+	margin-left: -.5vw;
+	margin-top: 0;
+}
+
+h3 {
+	font-family: 'Space Trio', monospace;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+	letter-spacing: 0;
+	font-feature-settings: "ss06";
+
+	color: #282828;
+
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 14px;
+	border-bottom: 2px solid #612AFF;
+}
+
+h4 {
+	font-family: 'Space Mono', monospace;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 22px;
+	margin-bottom: 6px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+
+	color: #282828;
+
+	display: inline-block;
+}
+
+p {
+	font-family: 'Space Trio', monospace;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0.4px;
+	font-feature-settings: "ss01", "ss02", "ss04", "ss05", "ss06", "onum";
+
+	color: #282828;
+	padding-bottom: 28px;
+}
+
+h6 {
+	font-family: 'Space Trio', monospace;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0.4px;
+	margin-top: 10px;
+	font-feature-settings: "ss01", "ss02", "ss04", "ss05", "ss06", "lnum";
+}
+
+.contents {
+	padding-left: 60px;
+	margin-top: 10px;
+}
+
+.contents span {
+	width: 40px;
+	padding-top: 2px;
+	font-weight: 600;
+	background-color: #F7F7F7;
+	color: #612AFF;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	border-radius: 4px;
+}
+
+.code {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 25px;
+	white-space: pre-wrap;
+	padding: 24px 14px;
+	margin: 0px 0px 28px 0px;
+
+	background-color: #FFF;
+	border-radius: 4px;
+}
+
+.note {
+	font-style: italic;
+}
+
+h1::selection, h3::selection, h4::selection, h5::selection, p::selection {
+	background: #612AFF;
+	color: #FFFFFF;
+}
+
+blockquote {
+	display: block;
+	font-family: 'OCR A Std', monospace;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 34px;
+	letter-spacing: 0.4px;
+	text-shadow: 0 2px 0 #C1FFF2;
+
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px 0px 20px 74px;
+	border-radius: 4px;
+	margin-bottom: 28px;
+
+	color: #612AFF;
+}
+
+blockquote:before {
+	content:'“';
+	font-family: "Space Trio";
+	font-weight: 100;
+	text-align: left;
+	position: absolute;
+	font-size: 90px;
+	margin-top: calc(20px + .11em);
+	left: -.15em;
+}
+
+pre {
+	position: relative;
+	overflow: hidden;
+	font-family: 'Space Trio', monospace;
+	font-weight: 700;
+	font-size: 1.225vw;
+	letter-spacing: 0;
+	line-height: 1.1em;
+
+	margin: 44px 0px;
+
+	color: #612AFF;
+}
+
+.caption {
+	margin-top: 6px;
+	font-size: 14px;
+	line-height: 20px;
+	opacity: 0.4;
+}
+
+.copyright {
+	font-size: 14px;
+	opacity: 0.4;
+	font-feature-settings: "ss01", "ss02", "ss04", "ss05", "ss06", "lnum";
+}
+
+.copyright:nth-child(2) {
+	position: absolute;
+	text-align: right;
+	right: 0;
+	top: 0;
+}
+/*————————————————————————————  Misc.  ———————————————————————————— */
+.bannerBG {
+	background-color: #C1FFF2;
+	height: 100%;
+	width: 40%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	animation: bannerBG 1.5s infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes bannerBG {
+	0% {left: -41%;}
+	100% {left: 100%;}
+}
+
+.hr {
+	width: 100%;
+	height: 2px;
+	background-color: #282828;
+	margin-bottom: 18px;
+}
+
+.animationContainer {
+	position: relative;
+	margin-top: 0;
+	left: 0;
+	width: 100%;
+	padding-bottom: 10px;
+	margin-bottom: 0;
+}
+
+.animation {
+	max-width: 100%;
+	position: relative;
+	display: block;
+	min-height: 50.4vw;
+	margin-left: -2px;
+}
+
+/*————————————————————————————  Full-Width Button  ———————————————————————————— */ 
+.btn {
+	width: calc(100% - 24px);
+	position: relative;
+	max-width: 500px;
+	height: 40px;
+	margin: 40px auto 70px auto;
+	background-color: #F7F7F7;
+	transition: all .2s ease-in-out;
+	animation: buttonMain 2s infinite;
+}
+
+.btn-text {
+	color: #612AFF;
+	text-align: center;
+	line-height: 40px;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.btn-text:before {
+	position: absolute;
+	content: '';
+	display: block;
+	left: -12px;
+	top: 0;
+	height: 0;
+	width: 0;
+	border-top: 12px solid transparent;
+	border-right: 12px solid #F7F7F7;
+	border-bottom: 28px solid transparent;
+	transition: all .2s ease-in-out;
+	animation: buttonLeft 2s infinite;
+}
+
+.btn-text:after {
+	position: absolute;
+	content: '';
+	display: block;
+	right: -12px;
+	top: 0;
+	height: 0;
+	width: 0;
+	border-top: 28px solid transparent;
+	border-left: 12px solid #F7F7F7;
+	border-bottom: 12px solid transparent;
+	transition: all .2s ease-in-out;
+	animation: buttonRight 2s infinite;
+}
+
+.btn > .btn-text ~ p {
+	padding-bottom: 0px;
+}
+
+@keyframes buttonLeft {
+	0% {
+		left: 0px;
+		border-top: 0px solid transparent;
+		border-right-width: 0px;
+		border-bottom: 40px solid transparent;
+	}
+	33% {
+		left: -12px;
+		border-top: 12px solid transparent;
+		border-right-width: 12px;
+		border-bottom: 28px solid transparent;
+	}
+	66% {
+		left: -12px;
+		border-top: 28px solid transparent;
+		border-right-width: 12px;
+		border-bottom: 12px solid transparent;
+	}
+	99% {
+		left: 0px;
+		border-top: 40px solid transparent;
+		border-right-width: 0px;
+		border-bottom: 0px solid transparent;
+	}
+	100% {
+		left: 0px;
+		border-top: 0px solid transparent;
+		border-right-width: 0px;
+		border-bottom: 40px solid transparent;
+	}
+}
+
+@keyframes buttonRight {
+	0% {
+		right: 0px;
+		border-top: 40px solid transparent;
+		border-left-width: 0px;
+		border-bottom: 0px solid transparent;
+	}
+	33% {
+		right: -12px;
+		border-top: 28px solid transparent;
+		border-left-width: 12px;
+		border-bottom: 12px solid transparent;
+	}
+	66% {
+		right: -12px;
+		border-top: 12px solid transparent;
+		border-left-width: 12px;
+		border-bottom: 28px solid transparent;
+	}
+	99% {
+		right: 0px;
+		border-top: 0px solid transparent;
+		border-left-width: 0px;
+		border-bottom: 40px solid transparent;
+	}
+	100% {
+		right: 0px;
+		border-top: 40px solid transparent;
+		border-left-width: 0px;
+		border-bottom: 0px solid transparent;
+	}
+}
+
+@keyframes buttonMain {
+	0% {
+		width: 100%;
+	}
+	33% {
+		width: calc(100% - 24px);
+	}
+	66% {
+		width: calc(100% - 24px);
+	}
+	99% {
+		width: 100%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+/*————————————————————————————  Media Queries  ———————————————————————————— */    
+@media screen and (min-width: 600px) {
+	.title {
+		font-size: 52.6px;
+		margin-top: 16px;
+	}
+
+	.title ~ .title {
+		font-size:71px;
+		margin-top: 0;
+	}
+
+	pre {
+		font-size: calc(.01225 * 600px);
+	}
+
+	nav {
+		top: 0px;
+	}
+
+	article {
+		width: 540px;
+		margin: 80px auto 40px auto;
+	}
+
+	.animation {
+		max-height: 460px;
+		min-height: 0;
+	}
+}                                                                                                                   
