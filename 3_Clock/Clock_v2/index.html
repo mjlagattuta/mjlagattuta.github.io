@@ -1,0 +1,2263 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="global.css">
+
+	<!-- jQuery -->
+	<!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- 1:1 on Mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+		}
+
+		body {
+			font-size: 1vw;
+			background-color: #FFFFFF;
+		}
+
+		.wrapper {
+			display: grid;
+			position: absolute;
+			width: 90em;
+			height: 45em;
+			top: 50vh;
+			left: 50vw;
+			transform: translate(-50%, -50%);
+			box-sizing: border-box;
+			grid-gap: 10px 10px;
+		}
+
+		.wrapperS {
+			grid-template-columns: repeat(32, 1fr);
+    		grid-template-rows: repeat(16, 1fr);
+		}
+
+		.wrapperM {
+			grid-template-columns: repeat(16, 1fr);
+    		grid-template-rows: repeat(8, 1fr);
+		}
+
+		.wrapperH {
+			grid-template-columns: repeat(8, 1fr);
+    		grid-template-rows: repeat(4, 1fr);
+		}
+
+		.blockContain {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			/*animation: blockContain 2s infinite ease-in-out;*/
+			background-color: rgba(0, 0, 0, .1);
+
+			visibility: hidden;
+		}
+
+		.block {
+			position: absolute;
+			box-sizing: border-box;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: #F00;
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, .1);
+			filter: blur(0px);
+			/*animation: blockMove 2s infinite ease-in-out;*/
+		}
+
+		@keyframes blockMove {
+			0% {box-shadow: 0 0 0 0 rgba(0, 0, 0, .1); border: 0px solid rgba(0, 0, 0, 0);}
+			25% {box-shadow: 0 1.5em 3em 0 rgba(0, 0, 0, .1); border: 0px solid rgba(0, 0, 0, 0);}
+			49.9999% {filter: blur(0px); border: 0px solid rgba(0, 0, 0, 0);}
+			50% {box-shadow: 0 0 0px 0 rgba(0, 0, 0, .1); border: 0px solid rgba(0, 0, 0, 0); filter: blur(0px);}
+			75% {border-width: 1.4em 1.2em .03em 1.2em; filter: blur(.7em);}
+			100% {border: 0px solid rgba(0, 0, 0, .1); filter: blur(0px);}
+		}
+
+		@keyframes blockContain {
+			0%, 49.999999% {overflow: visible; z-index: 1;}
+			50%, 100% {overflow: hidden; z-index: 0;}
+		}
+
+		@media (min-width: 600px) {
+
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="wrapper wrapperH">
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+	</div>
+	<div class="wrapper wrapperM">
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+	</div>
+	<div class="wrapper wrapperS">
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+		<div class="blockContain">
+			<div class="block"></div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		// Create arrays for good and bad numbers
+		var inactiveH = [];
+		var inactiveM = [];
+		var inactiveS = [];
+		var activeH = [];
+		var activeM = [];
+		var activeS = [];
+		var occupiedH = [];
+		var occupiedM = [];
+		var occupiedS = [];
+
+		// Fill each array with consecutive numbers with 1 at [0]
+		for(i = 1; i <= 32; i++) {
+			inactiveH.push(i);
+		}
+		for(i = 1; i <= 124; i++) {
+			inactiveM.push(i);
+		}
+		for(i = 1; i <= 496; i++) {
+			inactiveS.push(i);
+		}
+
+		// Math.random outputs 0.0–1.0, Math.floor rounds to nearest integer
+		function getRandomInt(max) {
+		  return Math.floor(Math.random() * Math.floor(max));
+		}
+
+		// Gets occupied hours, converts to the 4 overlapping minute blocks, appends to occupiedM array
+		function getOccupiedM() {
+			for(i = 0; i < occupiedH.length; i++) {
+				hourBlock = occupiedH[i];
+				minTL = ((occupiedH[i] * 4) - (((Math.round(occupiedH[i] % 8.05)) * 2) + 1));
+				minTR = (minTL + 1);
+				minBL = (minTL + 16);
+				minBR = (minBL + 1);
+
+				occupiedM.push(minTL);
+				occupiedM.push(minTR);
+				occupiedM.push(minBL);
+				occupiedM.push(minBR);
+			}
+		}
+
+		// Gets occupied minutes, converts to the 4 overlapping second blocks, appends to occupiedS array
+		function getOccupiedS() {
+			for(i = 0; i < occupiedM.length; i++) {
+				minuteBlock = occupiedM[i];
+				secTL = ((occupiedM[i] * 4) - (((Math.round(occupiedM[i] % 16.05)) * 2) + 1));
+				secTR = (secTL + 1);
+				secBL = (secTL + 32);
+				secBR = (secBL + 1);
+
+				occupiedS.push(secTL);
+				occupiedS.push(secTR);
+				occupiedS.push(secBL);
+				occupiedS.push(secBR);
+			}
+		}
+
+		function modifyArray(unit, activeU, inactiveU, occupiedU) {
+			// If active blocks are less than current time, randomly choose from inactive, compare to occupied, and append to active
+			if((activeU.length) <= unit) {
+				for(i = (activeU.length); i < unit; i++) {
+					randomU = getRandomInt(inactiveU.length);
+					moveU = inactiveU[(randomU)];
+
+					// While an inactive block is chosen in a bad spot, run random function again without moving i forward
+					while(occupiedU.includes(moveU)) {
+						randomU = getRandomInt(inactiveU.length);
+						moveU = inactiveU[(randomU)];
+					}
+
+					// moveU is now equal to a non occupied space and moved to active and occupied
+					inactiveU.splice(randomU, 1);
+					activeU.push(moveU);
+					occupiedU.push(moveU);
+				}
+			} else {
+				activeLength = (activeU.length);
+
+				for(j = 0; j < activeLength; j++) {
+					removeU = activeU.splice(0, 1);
+					inactiveU.push(removeU);
+					occupiedU.push(removeU);
+				}
+			}
+		}
+			
+
+		// Main function that updates current time
+		setInterval(function() {
+		    var time = new Date();
+		    var hour = time.getHours() % 12;
+		    var minutes = time.getMinutes();
+		    var seconds = time.getSeconds();
+
+		    // Choose hours first
+		    modifyArray(hour, activeH, inactiveH, occupiedH);
+
+		    // Gets occupied hours and appends to occupiedM[]
+		    getOccupiedM();
+
+		    // Chooses minutes
+		    modifyArray(minutes, activeM, inactiveM, occupiedM);
+
+		    // Gets occupied minutes and appends to occupiedS[]
+		    getOccupiedS();
+
+		    // Chooses seconds
+		    modifyArray(seconds, activeS, inactiveS, occupiedS);
+
+		    // Places hours
+		    for(i = 0; i < activeH.length; i++) {
+		    	var hourActivate = activeH[i];
+		    	$(".wrapperH .blockContain:nth-child(" + hourActivate + ")").css({"visibility":"visible"});
+		    }
+
+		    // Places minutes
+		    for(i = 0; i < activeM.length; i++) {
+		    	var minuteActivate = activeM[i];
+		    	$(".wrapperM .blockContain:nth-child(" + minuteActivate + ")").css({"visibility":"visible"});
+		    }
+
+		    // Places seconds
+		    for(i = 0; i < activeS.length; i++) {
+		    	var secondActivate = activeS[i];
+		    	$(".wrapperS .blockContain:nth-child(" + secondActivate + ")").css({"visibility":"visible"});
+		    }
+
+		    // Clears hours
+		    for(j = 0; j < inactiveH.length; j++) {
+		    	var hourDeactivate = inactiveH[j];
+		    	$(".wrapperH .blockContain:nth-child(" + hourDeactivate + ")").css({"visibility":"hidden"});
+		    }
+
+		    // Clears minutes
+		    for(j = 0; j < inactiveM.length; j++) {
+		    	var minuteDeactivate = inactiveM[j];
+		    	$(".wrapperM .blockContain:nth-child(" + minuteDeactivate + ")").css({"visibility":"hidden"});
+		    }
+
+		    // Clears seconds
+		    for(j = 0; j < inactiveS.length; j++) {
+		    	var secondDeactivate = inactiveS[j];
+		    	$(".wrapperS .blockContain:nth-child(" + secondDeactivate + ")").css({"visibility":"hidden"});
+		    }
+
+		    console.log(seconds);
+	    }, 1000);
+	});
+</script>
+
+</html>
