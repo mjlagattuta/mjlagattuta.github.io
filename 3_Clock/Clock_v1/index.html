@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="global.css">
+
+	<!-- jQuery -->
+	<!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- 1:1 on Mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+		}
+
+		body {
+			font-size: 1vw;
+			background-color: #FFFFFF;
+		}
+
+		.wrapper {
+			display: grid;
+			width: 90em;
+			height: 45em;
+			margin: 50vh auto 0 auto;
+			transform: translateY(-50%);
+			box-sizing: border-box;
+
+			grid-template-columns: repeat(12, 1fr);
+    		grid-template-rows: repeat(6, 1fr);
+
+    		grid-gap: 10px 10px;
+		}
+
+		.container {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100px;
+			height: 100px;
+			animation: boxContain 2s infinite ease-in-out;
+		}
+
+		.block {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			animation: boxContain 2s infinite ease-in-out;
+			background-color: rgba(0, 0, 0, .1);
+		}
+
+		.block, .ctr, .down {
+			visibility: hidden;
+		}
+
+		.ctr {
+			position: absolute;
+			box-sizing: border-box;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: #FFF;
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, .1);
+			filter: blur(0px);
+			animation: boxMoveOne 2s infinite ease-in-out;
+		}
+
+		.down {
+			position: absolute;
+			box-sizing: border-box;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: #FFF;
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, .1);
+			border-width: 1.4em 1.2em .03em 1.2em;
+			filter: blur(.7em);
+		}
+
+		@keyframes boxMoveOne {
+			0% {box-shadow: 0 0 0 0 rgba(0, 0, 0, .1); border: 0px solid rgba(0, 0, 0, 0);}
+			25% {box-shadow: 0 1.5em 3em 0 rgba(0, 0, 0, .1); border: 0px solid rgba(0, 0, 0, 0);}
+			49.9999% {filter: blur(0px); border: 0px solid rgba(0, 0, 0, 0);}
+			50% {box-shadow: 0 0 0px 0 rgba(0, 0, 0, .1); border: 0px solid rgba(0, 0, 0, 0); filter: blur(0px);}
+			75% {border-width: 1.4em 1.2em .03em 1.2em; filter: blur(.7em);}
+			100% {border: 0px solid rgba(0, 0, 0, .1); filter: blur(0px);}
+		}
+
+		@keyframes boxContain {
+			0%, 49.999999% {overflow: visible; z-index: 1;}
+			50%, 100% {overflow: hidden; z-index: 0;}
+		}
+
+		@media (min-width: 600px) {
+
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="ctr"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+		<div class="block">
+			<div class="down"></div>
+		</div>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function(){
+
+	    var numItems = $('.ctr').length
+	    console.log(numItems);
+
+	    for (i = 0; i < numItems; i++) {
+	    	$(".block:nth-child(" + (i + 1) +"), .block:nth-child(" + (i + 1) + ") .ctr").css({"animation-delay": (i * -.1) + "s"});
+	    }
+
+
+	    setInterval(function() {
+		    var time = new Date();
+		    var hour = time.getHours() % 12;
+		    var minutes = time.getMinutes();
+		    var seconds = time.getSeconds();
+
+		    for (i = 0; i < minutes; i++) {
+		    	$(".block:nth-child(" + (i + 1) + "), .block:nth-child(" + (i + 1) + ") .ctr").css({"visibility":"visible"});
+		    	setTimeout(function() {
+		    		$(".block:nth-child(" + (i + 1) + "), .block:nth-child(" + (i + 1) + ") .ctr").css({"visibility":"hidden"});
+		    	}, 1000);
+		    }
+
+		    for (j = 0; j < hour; j++) {
+		    	$(".block:nth-child(" + (60 + j + 1) + "), .block:nth-child(" + (60 + j + 1) + ") .down").css({"visibility":"visible"});
+		    }
+	    }, 1000);
+
+	});
+</script>
+</html>
