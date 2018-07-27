@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+<head>
+	<!-- 1:1 on Mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Space Mono Experiment</title>
+
+	<style>
+		@font-face {
+			font-family: "Space Mono";
+			src: url("SpaceMonoGX.ttf") format("truetype");
+		}
+
+		p {
+			font-family: "Space Mono";
+			display: block;
+			position: absolute;
+			font-size: 22vw; 
+			left: 50vw;
+			top: calc(50vh - 22.2vw);
+			transform: translate(-50%, -50%);
+			font-variation-settings: "wght" 84, "ital" 0, "slnt" 0;
+			text-align: center;
+
+			animation: rotate 6s infinite ease-in-out;
+		}
+
+		@keyframes rotate {
+			0% {font-variation-settings: "wght" 84, "ital" 0, "slnt" 0;}
+			25% {font-variation-settings: "wght" 84, "ital" 100, "slnt" 100;}
+			50% {font-variation-settings: "wght" 84, "ital" 100, "slnt" 0;}
+			75% {font-variation-settings: "wght" 84, "ital" 0, "slnt" 100;}
+			100% {font-variation-settings: "wght" 84, "ital" 0, "slnt" 0;}
+		}
+
+		@media (max-width: 700px) {
+			p {
+				font-size: 82vw !important; 
+				top: calc(50vh - 82.2vw);
+			}
+		}
+	</style>
+</head>
+
+<body>
+  <p>aln</p>
+</body>
+
+</html>
