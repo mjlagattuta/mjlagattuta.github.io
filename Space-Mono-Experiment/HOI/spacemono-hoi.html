@@ -10,7 +10,7 @@
 	<style>
 		@font-face {
 			font-family: "Space Mono";
-			src: url("SpaceMonoHOI.ttf") format("truetype");
+			src: url("SpaceMonoHOI_2_cubic.ttf") format("truetype");
 		}
 
 		p {
@@ -21,18 +21,21 @@
 			left: 50vw;
 			top: calc(50vh - 52.2vw);
 			transform: translate(-50%, -50%);
-			font-variation-settings: "wght" 84, "slnt" 0, "ital" 0, "ITA2" 0, "ITA3" 0, "MONO" 1000; 
+			font-variation-settings: "wght" 400, "slnt" 0, "ital" 0, "ITA2" 0, "ITA3" 0, "MONO" 1000; 
 			text-align: center;
 			text-rendering: geometricPrecision;
 
 
-			animation: rotate 3s infinite ease-in-out;
+			animation: rotate 8s infinite ease-in-out;
 		}
 
 		@keyframes rotate {
-			0% {font-variation-settings: "wght" 84, "slnt" 0, "ital" 0, "ITA2" 0, "ITA3" 0, "MONO" 1000; }
-			50% {font-variation-settings: "wght" 84, "slnt" 0, "ital" 1000, "ITA2" 1000, "ITA3" 1000, "MONO" 1000; }
-			100% {font-variation-settings: "wght" 84, "slnt" 0, "ital" 0, "ITA2" 0, "ITA3" 0, "MONO" 1000; }
+			0% {font-variation-settings: "wght" 400, "slnt" 0, "ital" 0, "ITA2" 0, "ITA3" 0, "MONO" 1000; }
+			20% {font-variation-settings: "wght" 400, "slnt" 0, "ital" 1000, "ITA2" 1000, "ITA3" 1000, "MONO" 1000; }
+			40% {font-variation-settings: "wght" 400, "slnt" 1000, "ital" 1000, "ITA2" 1000, "ITA3" 1000, "MONO" 1000; }
+			60% {font-variation-settings: "wght" 700, "slnt" 1000, "ital" 1000, "ITA2" 1000, "ITA3" 1000, "MONO" 1000; }
+			80% {font-variation-settings: "wght" 400, "slnt" 0, "ital" 1000, "ITA2" 1000, "ITA3" 1000, "MONO" 1000; }
+			100% {font-variation-settings: "wght" 400, "slnt" 0, "ital" 0, "ITA2" 0, "ITA3" 0, "MONO" 1000; }
 		}
 
 		@media (max-width: 700px) {
